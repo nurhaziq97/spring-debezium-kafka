@@ -8,18 +8,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
-public class UserService {
+@Service("users")
+public class UserService implements DBService{
     private final UserRepository userRepository;
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
     }
-
-    /**
+    
+   /**
      * replicate userData from source (producer) to another target db through debezium and kafka
      * @param userData data from source
      * @param operation operation done in source and get through debezium
      */
+    @Override
     public void replicateData(Map<String, Object> userData, Operation operation){
         final ObjectMapper  objectMapper = new ObjectMapper();
         final Users user = objectMapper.convertValue(userData, Users.class);
@@ -29,4 +30,6 @@ public class UserService {
             userRepository.save(user);
         }
     }
+
+    
 }

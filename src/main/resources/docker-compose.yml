@@ -53,6 +53,10 @@ services:
       - kafka
   mysql:
     image: mysql:8.0.33
+    ports:
+      - 33006:3306
+    expose:
+      - 33006
     environment:
       MYSQL_ROOT_PASSWORD: root
       

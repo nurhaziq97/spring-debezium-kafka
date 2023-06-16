@@ -37,7 +37,7 @@ public class DebeziumUserConnectorConfig {
                 .with("database.password", dbPassword)
                 .with("database.dbname", dbName)
                 .with("database.server.name", "postgres")
-                .with("table.include.list", "testschema.users")
+                // .with("table.include.list", "testschema.users")
                 .with("topic.prefix", "postgreTestDb")
                 .with("offset.storage", "org.apache.kafka.connect.storage.FileOffsetBackingStore")
                 .with("offset.storage.file.filename", offsetStorageTempFile.getAbsolutePath())
