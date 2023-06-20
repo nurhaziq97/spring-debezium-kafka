@@ -1,0 +1,15 @@
+{
+    "name": "example-db2-connector-v0.1",  
+    "config": {
+      "connector.class": "io.debezium.connector.db2.Db2Connector", 
+      "database.hostname": "172.19.0.5", 
+      "database.port": "50000", 
+      "database.user": "db2inst1", 
+      "database.password": "db2", 
+      "database.dbname": "testdb",
+      "topic.prefix": "blogs-usersdb2", 
+      "table.include.list": "blogs.users", 
+      "schema.history.internal.kafka.bootstrap.servers": "kafka:29092", 
+      "schema.history.internal.kafka.topic": "record.blogs" 
+    }
+  }

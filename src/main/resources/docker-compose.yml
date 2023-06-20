@@ -59,4 +59,21 @@ services:
       - 33006
     environment:
       MYSQL_ROOT_PASSWORD: root
-      
+  db2debezium:
+    image: debeziumconnectordb2:2.2 # must setup the db2 Dockerfile first and follow the image name when setup the db2
+    ports:
+      - 50000:50000
+    privileged: true
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: db2
+      DBNAME: testdb
+    volumes:
+      - db2-inst:/var/ibm/db2
+      - db2-home:/home
+      - /home/haziq/db2/database:/database
+volumes: 
+  db2-inst:
+  db2-home:
+
+
