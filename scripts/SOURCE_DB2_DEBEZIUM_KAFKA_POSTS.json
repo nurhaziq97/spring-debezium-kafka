@@ -1,5 +1,5 @@
 {
-    "name": "example-db2-connector-v0.1",  
+    "name": "example-db2-connector-posts-v0.1",  
     "config": {
       "connector.class": "io.debezium.connector.db2.Db2Connector", 
       "database.hostname": "172.20.0.4", 
@@ -7,8 +7,8 @@
       "database.user": "db2inst1", 
       "database.password": "db2", 
       "database.dbname": "testdb",
-      "topic.prefix": "blogs-USERS-db2", 
-      "table.include.list": "blogs.users", 
+      "topic.prefix": "blogs-POSTS-db2", 
+      "table.include.list": "BLOGS.POSTS", 
       "schema.history.internal.kafka.bootstrap.servers": "kafka:29092", 
       "schema.history.internal.kafka.topic": "record.blogs"
     } 
